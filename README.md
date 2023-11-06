@@ -1,5 +1,7 @@
 # Google Clone
 
+![Screenshot from 2023-11-06 14-21-00](https://github.com/Shivam171/google-search-clone/assets/66107248/a8368abb-983f-4ac1-84ba-2f11ed9672f9)
+
 A simple Google Search clone project created using React, Material-UI, React Router, React state management, custom hooks, and the Context API. This project demonstrates the functional part of Google Search, including searching and querying Google data. 
 
 Please note that the UI features and Responsiveness may not be fully functional as this project primarily focuses on showcasing the functionality.
