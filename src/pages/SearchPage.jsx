@@ -14,9 +14,11 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AppsIcon from "@mui/icons-material/Apps";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import {useState} from 'react'
 
 const SearchPage = () => {
   const [{ term }, dispatch] = useStateValue();
+  const [currentTerm, setCurrentTerm] = useState(term);
 
   // Live Api Call
   const { data } = useGoogleSearch(term);
@@ -40,7 +42,7 @@ const SearchPage = () => {
               />
             </Link>
             <div className="searchBar">
-              <Search hideButtons />
+              <Search hideButtons term={currentTerm} />
             </div>
           </div>
           <div className="header_Icons">

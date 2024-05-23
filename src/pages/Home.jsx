@@ -9,14 +9,16 @@ const Home = () => {
     <div className="home">
       <div className="home_header">
         <div className="home_headerLeft">
-          <Link to="/about">About</Link>
-          <Link to="/store">Store</Link>
+          <Link to="https://about.google/?utm_source=google-IN&utm_medium=referral&utm_campaign=hp-footer&fg=1">About</Link>
+          <Link to="https://store.google.com/?hl=en-GB">Store</Link>
         </div>
         <div className="home_headerRight">
-          <Link to="/gmail">Gmail</Link>
-          <Link to="/images">Images</Link>
+          <Link to="https://www.google.com/gmail/about/">Gmail</Link>
+          <Link to="https://www.google.co.in/imghp?hl=en&ogbl">Images</Link>
           <AppsIcon className="appsIcon" />
-          <AccountCircleIcon className="avatarIcon" />
+          <Link to="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.co.in%2F&ec=GAZAmgQ&hl=en&ifkv=AaSxoQy3uhu-_yVdK5cvB3m4_-vuznycbJQzxXUVczYNW3z4ZgGSJuJpzUVByA0iPpTO9poAGR3ohQ&passive=true&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S251855966%3A1716472939526477&ddm=0" className="avatarIconOuter">
+            <AccountCircleIcon className="avatarIcon" />
+          </Link>
         </div>
       </div>
       <div className="home_body">
