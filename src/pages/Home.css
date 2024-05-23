@@ -39,11 +39,11 @@
   color: #5f6368;
 }
 
-.home_headerRight > .avatarIcon {
+.home_headerRight > .avatarIconOuter > .avatarIcon {
   color: #76787c;
 }
 
-.home_headerRight > .avatarIcon {
+.home_headerRight > .avatarIconOuter > .avatarIcon {
   font-size: 33px;
 }
 
@@ -52,12 +52,12 @@
   margin-right: 12px;
 }
 
-.home_headerRight > .avatarIcon {
+.home_headerRight > .avatarIconOuter > .avatarIcon {
   padding: 1px;
 }
 
 .home_headerRight > .appsIcon:hover,
-.home_headerRight > .avatarIcon:hover {
+.home_headerRight > .avatarIconOuter > .avatarIcon:hover {
   background-color: rgba(60, 64, 67, 0.08);
   border-radius: 50%;
 }
