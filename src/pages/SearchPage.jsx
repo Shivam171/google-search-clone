@@ -14,7 +14,8 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AppsIcon from "@mui/icons-material/Apps";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const SearchPage = () => {
   const [{ term }, dispatch] = useStateValue();
@@ -28,6 +29,31 @@ const SearchPage = () => {
 
   console.log("Current term:", term);
   console.log("Data:", data);
+
+  
+  const [geminiText, setGeminiText] = useState("");
+  // Initialize GoogleGenerativeAI with your API key
+  // Do not copy the same GoogleGenerativeAI Key get your own key from gemini api, its free!
+  const genAI = new GoogleGenerativeAI("AIzaSyA7PYmC1cTornUMI6NYBOSQMjFgDbgH6fM");
+
+  // Function to run Gemini LLPM
+  const runGemini = async () => {
+    // For text-only input, use the gemini-pro model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+    const prompt = term;
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    setGeminiText(text); // Update state with generated text
+  };
+
+  // Run Gemini LLPM when the component mounts
+  useEffect(() => {
+    runGemini();
+  }, []);
+
 
   return (
     <div className="searchPage">
@@ -119,6 +145,10 @@ const SearchPage = () => {
             About {data?.searchInformation.formattedTotalResults} results (
             {data?.searchInformation.formattedSearchTime} seconds)
           </p>
+          <div className="geminiText">
+            <h3>Generated Text from Gemini:</h3>
+            <p>{geminiText}</p>
+          </div>
           {data?.items.map((item, index) => (
             <div className="searchPage_result" key={index}>
               <a href={item.link} className="searchPage_displayLink">

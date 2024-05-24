@@ -1,3 +1,19 @@
+/* Style for the container of the generated text */
+.geminiText {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  border: 1px solid #e0e0e0;
+}
+
+/* Style for the header of the generated text */
+.geminiText h3 {
+  margin-bottom: 10px;
+}
+
+
 .searchPageHeader {
   display: flex;
   flex-direction: column;
